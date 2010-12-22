@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "factories" do
+    it "creates with no errors" do
+      Factory(:user).errors.should be_empty
+    end
+  end
 end
