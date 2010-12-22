@@ -6,6 +6,7 @@ gem "devise"
 gem "devise_rpx_connectable" 
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
+gem "cancan"
 
 group :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
