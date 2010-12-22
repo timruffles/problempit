@@ -7,7 +7,7 @@ I want a problem entry screen
   context "logged in" do
     scenario "create a problem"
   end
-  context "not logged in" do
+  context "lazy logged in" do
     scenario "create a problem, should be prompted to login to create the problem"
   end
 end
