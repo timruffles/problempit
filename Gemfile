@@ -14,4 +14,6 @@ group :test do
   gem "steak", ">= 1.0.0.rc.1"
   gem "capybara"
   gem "spork"
+  gem "factory_girl", '~> 2.0.0.beta'
+  gem "factory_girl_rails", '1.1.beta1'
 end
