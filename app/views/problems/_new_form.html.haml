@@ -1,0 +1,6 @@
+- form_for problem do |f|
+  .field
+    = f.text_field :name
+    = f.label :name
+  .field
+    = dijit_form_slider_tag 'blah', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'

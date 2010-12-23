@@ -1,0 +1,16 @@
+<div id="horizontalSlider" dojoType="dijit.form.HorizontalSlider" <%= tag_options(dijit_options, true) %>>
+    <% unless upper_labels.empty? %>
+      <ol dojoType="dijit.form.HorizontalRuleLabels" container="topDecoration">
+        <% upper_labels.each do |label| %>
+          <li><%= label %></li>
+        <% end %>
+      </ol>
+    <% end %>
+    <% unless lower_labels.empty? %>
+      <ol dojoType="dijit.form.HorizontalRuleLabels" container="topDecoration">
+        <% lower_labels.each do |label| %>
+          <li><%= label %></li>
+        <% end %>
+      </ol>
+    <% end %>
+</div>
