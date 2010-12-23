@@ -1,0 +1,29 @@
+- content_for :header do
+  %h1 Entrepreneurs focus on solutions, not problems
+  %span.twitter #pp-entfcs
+  
+#problem-data.block
+  %h2 Problem summary
+  = dijit_form_slider_tag 'blah', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+  = dijit_form_slider_tag 'jah', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+  = dijit_form_slider_tag 'flag', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+  = dijit_form_slider_tag 'bar', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+  = dijit_form_slider_tag 'baz', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+#solutions.block
+  %h2 Solutions
+  %h3 Tech
+  %h3 Service
+  %h3 Manufacturing
+#discussions.block
+  %h2 Discussion
+  %ul
+    %li Twitter - 'This is a great site'
+    %li HN - 'I hate this site'
+#teams.block
+  %h2 Teams
+  .team
+    %h3 ProductPit
+    .solution Website
+    %label Life stage:
+    = dijit_form_slider_tag 'value', 2..4, :upper_labels => ['Monkey','Fish','Spoon'], :discrete_values => 3, :style => 'width:200px'
+    

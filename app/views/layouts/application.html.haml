@@ -2,12 +2,13 @@
   %head
     %title ProbPit
     = stylesheet_link_tag "http://yui.yahooapis.com/combo?2.8.2r1/build/fonts/fonts-min.css&2.8.2r1/build/base/base-min.css"
-    = stylesheet_link_tag :all
     = dojo_theme_css
     = javascript_include_tag :defaults 
     = csrf_meta_tag
+    = stylesheet_link_tag :all
   %body{:class => dojo_theme}
     #wrap
-      %h2#page_header= yield :header
+      #header
+        = yield :header
       #content= yield
     = dojo_js
