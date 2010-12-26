@@ -34,24 +34,24 @@ class LazyAccept
   end
   # define all our matchers
   module MatcherDefinitions
+    include Spec::Matchers
     def wrap_with_message(to_wrap, definitions, default)
       # setup a message expectation with a default, and call original
-      ['','not_'].each do |neg|
-        definitions["#{neg}#{method}_with_message".to_sym] = lambda do |*args|
-          args_req = method(to_wrap)
-          message = if args.length > args_req
-                      args.pop
-                    else
-                      default
-                    end
-          page.send(neg == '' ? :should : :should_not, have_content(message))
+      define "#{method}_with_message".to_sym do |message|
+        match do |thing|
           should(to_wrap)
-          true # original matcher passes
+          page.has_content?(message || default)
+        end
+        failure_message_for_should do
+          "expected to see message #{message || default}"
+        end
+        failure_message_for_should_not do
+          "expected not to see message #{message || default}"
         end
       end
     end
-    DEFINITIONS = {
-      :have_created_an_instance => lambda do
+    define :have_created_an_instance do
+      match do |thing|
         # if the newest model equals sent attribs, we've created
         LazyAccept.state.testing_model.tap do |model|
           #model.count.should == s.current_count + 1
@@ -61,8 +61,10 @@ class LazyAccept
             newest_attribs[k].should == v if v 
           end
         end
-      end,
-      :have_updated_an_instance => lambda do
+      end
+    end
+    define :have_updated_an_instance do
+      match do |thing|
         # if the updated model has equal attribs, we've updated
         LazyAccept.state.testing_model.tap do |model|
           # TODO work for defaults
@@ -71,17 +73,9 @@ class LazyAccept
           end
         end
       end
-    }
+    end
     wrap_with_message :have_created_an_instance, DEFINTIIONS
     wrap_with_message :have_updated_an_instance, DEFINTIIONS
-    
-    include Spec::Matchers
-    DEFINITIONS.each do |matcher, implementation|
-      Spec::Matchers.define matcher do
-        match(&implementation)
-      end
-    end
   end
-  
 end
 
