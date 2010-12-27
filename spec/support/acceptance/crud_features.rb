@@ -18,19 +18,19 @@ class LazyAccept
     ['new','edit'].each do |action|
       define_method "submit_validly_filled_#{action}_form_for" do |model|
         model_name = model.to_s.tableize.singularize
-        fill_and_submit("#{action}_#{model_name}", Factory.attributes_for(model_name))
+        fill_and_submit("##{action}_#{model_name}", model_name, Factory.attributes_for(model_name))
         LazyAccept.state.testing_model(model)
       end
       define_method "submit_invalidly_filled_#{action}_form_for" do |model|
         model_name = model.to_s.tableize.singularize
-        fill_and_submit("##{action}_#{model_name}", Factory.attributes_for("invalid_#{model_name}"))
+        fill_and_submit("##{action}_#{model_name}", model_name, Factory.attributes_for("invalid_#{model_name}"))
         LazyAccept.state.testing_model(model)
       end
-      def fill_and_submit(form, attributes)
+      def fill_and_submit(form, model_name, attributes)
         attributes.each do |attribute, val|
-          within(form) { fill_in attribute.to_s, val}
+          within(form) { fill_in "#{model_name}[#{attribute.to_s}]", :with => val}
         end
-        within(form) { click_button '#submit' }
+        within(form) { click_button "#{model_name}_submit" }
       end
     end
   end
