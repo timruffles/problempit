@@ -33,15 +33,13 @@ class LazyAccept
   end
   # define all our matchers
   module MatcherDefinitions
-    def model_params
-      params[LazyAccept.state.testing_model.to_s.tableize]
-    end
     def self.wrap_with_message(to_wrap, default = false)
       # setup a message expectation with a default, and call original
       RSpec::Matchers.define "#{to_wrap}_with_message".to_sym do |message|
+        raise "Neither default not message supplied" unless message || default
         match do |thing|
           should(send(to_wrap))
-          page.has_content?(message || default)
+          Capybara.current_session.has_content?(message || default)
         end
         failure_message_for_should do
           "expected to see message #{message || default}"
@@ -75,10 +73,15 @@ class LazyAccept
         end
       end
     end
-    wrap_with_message :have_created_an_instance
-    wrap_with_message :have_updated_an_instance
+    wrap_with_message :have_created_an_instance, 'successfully created'
+    wrap_with_message :have_updated_an_instance, 'successfully saved'
+  end
+  module HelperMethods
+    def model_params
+      Capybara.current_session.driver.request.params[LazyAccept.state.testing_model.to_s.tableize.singularize]
+    end
   end
 end
 
 RSpec::Core::ExampleGroup.send(:include,LazyAccept::WebHelpers)
-
+include LazyAccept::HelperMethods
