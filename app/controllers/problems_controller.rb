@@ -8,6 +8,7 @@ class ProblemsController < ApplicationController
   end
   
   def create
+    Problem.create(params[:problem])
   end
   
   def show

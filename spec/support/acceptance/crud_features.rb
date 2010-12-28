@@ -1,30 +1,27 @@
 class LazyAccept
   class State
     attr_reader :testing_model
-    def testing_model(model)
-      model = model.to_s.classify.constantize unless Class === Model
+    def testing_model=(model)
+      model = model.to_s.classify.constantize unless Class === model
       @testing_model = model
       #@current_count = model.count
       #@current_first = model.first
     end
   end
-  def state
+  def self.state
     @state ||= State.new
   end
   module WebHelpers
-    def model_params
-      params[LazyAccept.state.testing_model.to_s.tableize]
-    end
     ['new','edit'].each do |action|
       define_method "submit_validly_filled_#{action}_form_for" do |model|
         model_name = model.to_s.tableize.singularize
         fill_and_submit("##{action}_#{model_name}", model_name, Factory.attributes_for(model_name))
-        LazyAccept.state.testing_model(model)
+        LazyAccept.state.testing_model = model
       end
       define_method "submit_invalidly_filled_#{action}_form_for" do |model|
         model_name = model.to_s.tableize.singularize
         fill_and_submit("##{action}_#{model_name}", model_name, Factory.attributes_for("invalid_#{model_name}"))
-        LazyAccept.state.testing_model(model)
+        LazyAccept.state.testing_model = model
       end
       def fill_and_submit(form, model_name, attributes)
         attributes.each do |attribute, val|
@@ -36,11 +33,14 @@ class LazyAccept
   end
   # define all our matchers
   module MatcherDefinitions
+    def model_params
+      params[LazyAccept.state.testing_model.to_s.tableize]
+    end
     def self.wrap_with_message(to_wrap, default = false)
       # setup a message expectation with a default, and call original
       RSpec::Matchers.define "#{to_wrap}_with_message".to_sym do |message|
         match do |thing|
-          should(to_wrap)
+          should(send(to_wrap))
           page.has_content?(message || default)
         end
         failure_message_for_should do
@@ -56,7 +56,7 @@ class LazyAccept
         # if the newest model equals sent attribs, we've created
         LazyAccept.state.testing_model.tap do |model|
           #model.count.should == s.current_count + 1
-          newest_attribs = model.first.attributes
+          newest_attribs = model.first.try(:attributes) or raise "No instance of #{model} existed when checking whether one was created"
           model_params.all? do |k,v|
             # TODO work for defaults
             newest_attribs[k].should == v if v 
