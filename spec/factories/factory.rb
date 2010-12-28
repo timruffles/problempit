@@ -14,6 +14,6 @@ FactoryGirl.define do
     name 'I have a weird foot'
   end
   factory :invalid_problem, :parent => :problem do
-    name '@£)(@)£()'
+    name ''
   end
 end

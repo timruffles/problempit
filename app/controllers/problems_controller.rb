@@ -8,7 +8,9 @@ class ProblemsController < ApplicationController
   end
   
   def create
-    Problem.create(params[:problem])
+    unless Problem.create(params[:problem])
+      render :new
+    end
   end
   
   def show

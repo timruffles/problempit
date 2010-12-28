@@ -54,7 +54,7 @@ class LazyAccept
         # if the newest model equals sent attribs, we've created
         LazyAccept.state.testing_model.tap do |model|
           #model.count.should == s.current_count + 1
-          newest_attribs = model.first.try(:attributes) or raise "No instance of #{model} existed when checking whether one was created"
+          newest_attribs = model.first.try(:attributes) || {}
           model_params.all? do |k,v|
             # TODO work for defaults
             newest_attribs[k].should == v if v 
