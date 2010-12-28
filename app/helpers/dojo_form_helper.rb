@@ -24,15 +24,20 @@ module DojoFormHelper
   # slider that works like a select - the index of the selected value will be submitted
   def dijit_form_slider_select_tag name, select_options, options = {}
     dijit_form_slider_tag(name, {:min => 0,
-                                 :max => select_options.values.length - 1,
-                                 :discrete_values => select_options.values.length},
-                                {:upper_labels => select_options.keys}.merge(options))
+                                 :max => select_options.length - 1,
+                                 :discrete_values => select_options.length},
+                                {:upper_labels => select_options.map(&:first)}.merge(options))
   end
   def render_template view, var_bindings
     template = ERB.new(File.read(view_path(view)))
     template.result(var_bindings).html_safe
   end
   def to_dojo_keys hash
-    Hash[*hash.map {|k,v| [k.to_s.camelize,v]}.flatten]
+    hash.inject({}) {|h, (k,v)| h[k.to_s.proper_camelize] = v; h}
+  end
+end
+class String
+  def proper_camelize
+    camelize.gsub(/^./) {|m| m.downcase}
   end
 end
