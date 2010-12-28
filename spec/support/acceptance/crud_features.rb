@@ -31,7 +31,6 @@ class LazyAccept
       end
     end
   end
-  # define all our matchers
   module MatcherDefinitions
     def self.wrap_with_message(to_wrap, default = false)
       # setup a message expectation with a default, and call original

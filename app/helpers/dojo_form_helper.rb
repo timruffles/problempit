@@ -21,6 +21,13 @@ module DojoFormHelper
     use_module('dijit.form.Slider')
     render_template('form/horizontal_slider', binding)
   end
+  # slider that works like a select - the index of the selected value will be submitted
+  def dijit_form_slider_select_tag name, select_options, options = {}
+    dijit_form_slider_tag(name, {:min => 0,
+                                 :max => select_options.values.length - 1,
+                                 :discrete_values => select_options.values.length},
+                                {:upper_labels => select_options.keys}.merge(options))
+  end
   def render_template view, var_bindings
     template = ERB.new(File.read(view_path(view)))
     template.result(var_bindings).html_safe
