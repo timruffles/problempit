@@ -16,5 +16,4 @@ group :test do
   gem 'launchy'
   gem "factory_girl", '~> 2.0.0.beta'
   gem "factory_girl_rails", '1.1.beta1'
-  gem 'remarkable_rails'
 end
