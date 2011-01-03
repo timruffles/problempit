@@ -121,6 +121,8 @@ GEM
       rubyzip
     spork (0.8.4)
     sqlite3-ruby (1.3.2)
+    steak (1.0.0)
+      rspec
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -140,10 +142,11 @@ DEPENDENCIES
   devise_rpx_connectable
   factory_girl (~> 2.0.0.beta)
   factory_girl_rails (= 1.1.beta1)
-  haml (~> 3.0.0)
+  haml (>= 3.0.0)
   haml-rails
   launchy
-  rails (~> 3.0.3)
-  rspec-rails (~> 2.0.1)
-  spork (~> 0.8.4)
+  rails (= 3.0.3)
+  rspec-rails (>= 2.0.1)
+  spork
   sqlite3-ruby
+  steak (>= 1.0.0.rc.1)
