@@ -6,9 +6,11 @@ ordinal_field pp
 
 class OrdinalFieldTest < ActiveSupport::TestCase
   INPUT_VALUE = [['Eccles',2],['Neddie',1]]
+  LABELS_ONLY = ['Cleese','Palin','Jones']
   module CleanRoom
     class ARecord < ActiveRecord::Base
       ordinal_field :goons, INPUT_VALUE
+      ordinal_field :pythons, LABELS_ONLY
     end
   end
   include CleanRoom
@@ -35,6 +37,16 @@ class OrdinalFieldTest < ActiveSupport::TestCase
       assert(Regexp.new(value.to_s) =~ record.errors[:goons].first, 
             "Error message #{record.errors[:goons].first} should contain all valid values as labels")
     end
+  end
+  test "takes a list of labels" do
+    pp ARecord.ordinals
+    assert_equal LABELS_ONLY, ARecord.ordinal_labels(:pythons)
+  end
+  test "takes a list of labels only and assigns values" do
+    assert_equal [0,1,2], ARecord.ordinal_values(:pythons)
+  end
+  test "creates consts for each option" do
+    assert_equal ARecord::PYTHONS_JONES, 2
   end
   # rails 3 doesn't call '% value' on message, a shame
   # test "out of range assignment creates an error specifies illegal value" do

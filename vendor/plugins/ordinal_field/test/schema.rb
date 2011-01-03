@@ -7,5 +7,6 @@ ActiveRecord::Schema.define(:version => 1) do
   
   create_table :a_records, :force => true do |t|
     t.integer :goons
+    t.integer :pythons
   end
 end
