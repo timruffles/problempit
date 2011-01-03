@@ -5,7 +5,7 @@ class ProblemOpinion < ActiveRecord::Migration
       t.integer :who_size
       t.integer :pain
       t.integer :awareness
-      t.integer :solved
+      t.integer :solutions
       t.integer :growth
       t.integer :authority_id
     end
