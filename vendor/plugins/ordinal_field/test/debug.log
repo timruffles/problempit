@@ -1,0 +1,448 @@
+# Logfile created on Mon Jan 03 16:54:47 +0000 2011 by logger.rb
+D, [2011-01-03T16:59:06.216328 #5956] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T16:59:06.216870 #5956] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T16:59:06.219544 #5956] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mCREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) [0m
+D, [2011-01-03T16:59:06.220235 #5956] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T16:59:06.221630 #5956] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+D, [2011-01-03T16:59:06.222060 #5956] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T16:59:06.224057 #5956] DEBUG -- :   [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+D, [2011-01-03T16:59:06.224442 #5956] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+D, [2011-01-03T16:59:06.226470 #5956] DEBUG -- :   [1m[36mSQL (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2011-01-03T16:59:06.226825 #5956] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T16:59:06.227219 #5956] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T16:59:06.228859 #5956] DEBUG -- :   [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('1')
+D, [2011-01-03T16:59:06.453125 #5956] DEBUG -- :   [1m[36mOrdinalFieldTest::CleanRoom::ARecord Load (0.2ms)[0m  [1mSELECT "a_records".* FROM "a_records" ORDER BY a_records.id DESC LIMIT 1[0m
+D, [2011-01-03T16:59:06.453225 #5956] DEBUG -- : SQLite3::SQLException: no such table: a_records: SELECT "a_records".* FROM "a_records" ORDER BY a_records.id DESC LIMIT 1
+D, [2011-01-03T16:59:21.841183 #5957] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T16:59:21.841848 #5957] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T16:59:21.844595 #5957] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T16:59:21.846396 #5957] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T16:59:21.847231 #5957] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T16:59:21.848758 #5957] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+D, [2011-01-03T16:59:21.849248 #5957] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T16:59:21.849605 #5957] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+D, [2011-01-03T16:59:22.071854 #5957] DEBUG -- :   [1m[36mOrdinalFieldTest::CleanRoom::ARecord Load (0.2ms)[0m  [1mSELECT "a_records".* FROM "a_records" ORDER BY a_records.id DESC LIMIT 1[0m
+D, [2011-01-03T17:00:12.508962 #5958] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:00:12.509670 #5958] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:12.512350 #5958] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:00:12.514129 #5958] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:00:12.514954 #5958] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:00:12.516614 #5958] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:00:12.518236 #5958] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+D, [2011-01-03T17:00:12.518734 #5958] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:12.519095 #5958] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:00:19.210074 #5959] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:00:19.210753 #5959] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:19.213461 #5959] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:00:19.215061 #5959] DEBUG -- :   [1m[35mSQL (1.2ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:00:19.215807 #5959] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:00:19.217309 #5959] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:00:19.219072 #5959] DEBUG -- :   [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+D, [2011-01-03T17:00:19.219731 #5959] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:19.220138 #5959] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:00:19.402551 #5959] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:31.883221 #5960] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:00:31.883928 #5960] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:31.886739 #5960] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:00:31.888705 #5960] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:00:31.889453 #5960] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:00:31.891128 #5960] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:00:31.892992 #5960] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+D, [2011-01-03T17:00:31.893482 #5960] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:31.893871 #5960] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:00:48.379022 #5961] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:00:48.379729 #5961] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:48.382733 #5961] DEBUG -- :   [1m[36mSQL (2.8ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:00:48.384593 #5961] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:00:54.596895 #5962] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:00:54.597637 #5962] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:00:54.600355 #5962] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:00:54.601978 #5962] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:00.160508 #5963] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:01:00.161241 #5963] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:00.163881 #5963] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:01:00.165538 #5963] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:04.554283 #5964] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:01:04.555005 #5964] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:04.557717 #5964] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:01:04.559613 #5964] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:04.560479 #5964] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:01:04.562046 #5964] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:01:04.563977 #5964] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" text) [0m
+D, [2011-01-03T17:01:04.564552 #5964] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:04.564943 #5964] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:01:33.763785 #5966] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:01:33.764478 #5966] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:33.767372 #5966] DEBUG -- :   [1m[36mSQL (2.7ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:01:33.769180 #5966] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:33.770148 #5966] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:01:33.771861 #5966] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:01:33.773823 #5966] DEBUG -- :   [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" text) [0m
+D, [2011-01-03T17:01:33.774890 #5966] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:33.775811 #5966] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:01:41.348103 #5967] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:01:41.348790 #5967] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:41.351249 #5967] DEBUG -- :   [1m[36mSQL (2.3ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:01:41.589305 #5967] DEBUG -- :   [1m[35mSQL (237.6ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:41.590557 #5967] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:01:41.593105 #5967] DEBUG -- :   [1m[35mSQL (2.3ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:01:41.595608 #5967] DEBUG -- :   [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" text) [0m
+D, [2011-01-03T17:01:41.596298 #5967] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:41.596752 #5967] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:01:56.468846 #5969] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:01:56.469527 #5969] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:56.693060 #5969] DEBUG -- :   [1m[36mSQL (223.3ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:01:57.080203 #5969] DEBUG -- :   [1m[35mSQL (386.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:01:57.082198 #5969] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:01:57.392269 #5969] DEBUG -- :   [1m[35mSQL (309.8ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:01:57.393797 #5969] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" text) [0m
+D, [2011-01-03T17:01:57.394403 #5969] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:01:57.394919 #5969] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:06:44.327574 #5982] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:06:44.328284 #5982] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:06:44.330825 #5982] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:06:44.332688 #5982] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:06:44.333752 #5982] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:06:44.335474 #5982] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:06:44.337513 #5982] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:06:44.338269 #5982] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:06:44.339025 #5982] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:07:31.025803 #5983] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:07:31.026501 #5983] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:07:31.029293 #5983] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:07:31.031148 #5983] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:07:31.031921 #5983] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:07:31.033557 #5983] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:07:31.035231 #5983] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:07:31.035688 #5983] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:07:31.036043 #5983] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:07:36.706180 #5984] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:07:36.706870 #5984] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:07:36.709549 #5984] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:07:36.711158 #5984] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:07:36.711939 #5984] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:07:36.713635 #5984] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:07:36.715654 #5984] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:07:36.716142 #5984] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:07:36.716517 #5984] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:08:02.904746 #5985] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:08:02.905457 #5985] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:08:02.907982 #5985] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:08:02.909628 #5985] DEBUG -- :   [1m[35mSQL (1.2ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:08:02.911143 #5985] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:08:02.913006 #5985] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:08:02.914571 #5985] DEBUG -- :   [1m[36mSQL (1.3ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:08:02.915473 #5985] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:08:02.916859 #5985] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:08:34.192891 #5988] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:08:34.193577 #5988] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:08:34.196143 #5988] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:08:34.198254 #5988] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:08:34.199286 #5988] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:08:34.200781 #5988] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:08:34.202684 #5988] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:08:34.203463 #5988] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:08:34.203855 #5988] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:09:23.595072 #5989] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:09:23.595749 #5989] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:23.598339 #5989] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:09:23.600009 #5989] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:09:23.600840 #5989] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:09:23.602609 #5989] DEBUG -- :   [1m[35mSQL (1.6ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:09:23.604297 #5989] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:09:23.604746 #5989] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:23.605114 #5989] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:09:31.515718 #5990] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:09:31.516434 #5990] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:31.519099 #5990] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:09:31.520995 #5990] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:09:31.522091 #5990] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:09:31.523957 #5990] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:09:31.526195 #5990] DEBUG -- :   [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:09:31.527037 #5990] DEBUG -- :   [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:31.528023 #5990] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:09:47.729023 #5991] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:09:47.729702 #5991] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:47.732491 #5991] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:09:47.734608 #5991] DEBUG -- :   [1m[35mSQL (1.7ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:09:47.735439 #5991] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:09:47.737069 #5991] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:09:47.739109 #5991] DEBUG -- :   [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:09:47.739822 #5991] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:09:47.740388 #5991] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:10:00.066363 #5992] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:10:00.067060 #5992] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:00.069638 #5992] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:10:00.071305 #5992] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:10:00.072208 #5992] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:10:00.073774 #5992] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:10:00.075504 #5992] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:10:00.075967 #5992] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:00.076336 #5992] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:10:17.494704 #5993] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:10:17.495406 #5993] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:17.498088 #5993] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:10:17.499872 #5993] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:10:17.500887 #5993] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:10:17.502446 #5993] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:10:17.504115 #5993] DEBUG -- :   [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:10:17.504683 #5993] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:17.505110 #5993] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:10:41.771878 #5994] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:10:41.772558 #5994] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:41.775116 #5994] DEBUG -- :   [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:10:41.776778 #5994] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:10:41.777599 #5994] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:10:41.779186 #5994] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:10:41.780992 #5994] DEBUG -- :   [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:10:41.781558 #5994] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:10:41.781955 #5994] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:13:11.141970 #6000] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:13:11.142688 #6000] DEBUG -- :   [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:13:11.145429 #6000] DEBUG -- :   [1m[36mSQL (2.6ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:13:11.147293 #6000] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:13:11.148162 #6000] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:13:11.150332 #6000] DEBUG -- :   [1m[35mSQL (2.0ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:13:11.152398 #6000] DEBUG -- :   [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:13:11.152911 #6000] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:13:11.153307 #6000] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:13:28.604411 #6001] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:13:28.605092 #6001] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:13:28.607797 #6001] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:13:28.609795 #6001] DEBUG -- :   [1m[35mSQL (1.6ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:13:28.610696 #6001] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:13:28.612570 #6001] DEBUG -- :   [1m[35mSQL (1.6ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:13:28.614605 #6001] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:13:28.615126 #6001] DEBUG -- :   [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:13:28.615645 #6001] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2011-01-03T17:18:52.448220 #6015] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2011-01-03T17:18:52.448897 #6015] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:18:52.451585 #6015] DEBUG -- :   [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "conversations"[0m
+D, [2011-01-03T17:18:52.453435 #6015] DEBUG -- :   [1m[35mSQL (1.5ms)[0m  CREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state_machine" varchar(255), "subject" varchar(255), "closed" boolean) 
+D, [2011-01-03T17:18:52.454323 #6015] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-03T17:18:52.455765 #6015] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  DROP TABLE "a_records"
+D, [2011-01-03T17:18:52.457838 #6015] DEBUG -- :   [1m[36mSQL (1.8ms)[0m  [1mCREATE TABLE "a_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "goons" integer) [0m
+D, [2011-01-03T17:18:52.458553 #6015] DEBUG -- :   [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+D, [2011-01-03T17:18:52.458940 #6015] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m

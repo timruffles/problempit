@@ -1,0 +1,7 @@
+sqlite:
+  adapter: sqlite
+  database: vendor/plugins/ordinal_field/test/ordinal_fields.sqlite
+ 
+sqlite3:
+  adapter: sqlite3
+  database: vendor/plugins/ordinal_field/test/ordinal_fields.sqlite3
